@@ -1,0 +1,13 @@
+.flex {
+  display: flex;
+  align-items: center;
+  padding: 1rem 0 1rem 0;
+}
+
+.contact-icons {
+  margin-right: 0.5rem;
+}
+
+.contact-background {
+  background-color: rgb(244, 244, 237);
+}
