@@ -50,9 +50,9 @@ const Contact = () => {
         </Grid>
         <Grid item md={7}>
           <form ref={form} onSubmit={handleSubmit}>
-            <TextField label="Name" name="from_name" variant="filled" fullWidth required />
+            <TextField label="Your Name" name="from_name" variant="filled" fullWidth required />
             <TextField
-              label="Email"
+              label="Your Email"
               name="from_email"
               variant="filled"
               fullWidth
@@ -86,11 +86,11 @@ const Contact = () => {
         <Grid item md={5}>
           <Box className="flex">
             <PhoneAndroidIcon className="contact-icons" />
-            <Typography variant="body1">TBD</Typography>
+            <Typography variant="body1">+1 778-668-6364</Typography>
           </Box>
           <Box className="flex">
             <EmailIcon className="contact-icons" />
-            <Typography variant="body1">vanrousgkx@hotmail.com</Typography>
+            <Typography variant="body1">kevingu7140@gmail.com</Typography>
           </Box>
           <Box className="flex">
             <GitHubIcon className="contact-icons" />
