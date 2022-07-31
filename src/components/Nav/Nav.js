@@ -16,7 +16,8 @@ const Nav = () => {
   });
 
   const toggleMenu = () => {
-    document.querySelector(".nav-container").classList.toggle("show");
+    const nav = document.querySelector(".MuiToolbar-root");
+    nav.classList.toggle("show");
   };
 
   return (
@@ -34,7 +35,6 @@ const Nav = () => {
           sx={{
             display: "flex",
             justifyContent: "center",
-            alignItems: "center",
             columnGap: 5,
             fontSize: "1.5rem",
           }}

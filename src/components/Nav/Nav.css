@@ -10,13 +10,13 @@
 
 @media (max-width: 600px) {
   .nav-container {
-    display: none;
+    display: none !important;
     flex-direction: column;
     row-gap: 0.5rem;
     padding: 0.5rem;
   }
 
   .show {
-    display: flex;
+    display: flex !important;
   }
 }
