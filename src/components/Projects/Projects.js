@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Box,
   Card,
   CardMedia,
-  CardContent,
   CardActions,
   Typography,
   Button,
@@ -17,12 +16,10 @@ import TabIcon from "@mui/icons-material/Tab";
 import "./Project.css";
 
 const Projects = () => {
-  const [open, setOpen] = useState(false);
-
   const projects = [
     {
       title: "MERN Foodie app",
-      desc: "It's a MERN stack app that users are allowed to create their favorite recipes. All the recipes will be stored in MongoDB database.",
+      desc: "It's a recipe sharing app built with MERN stack. Users are allowed to login with Email or Google account. This app also supports basic CRUD operations and all the recipes will be stored in MongoDB database.",
       image: "./images/foodie.jpg",
       chips: [
         "React.js",
@@ -61,23 +58,39 @@ const Projects = () => {
       <div className="project-background-overlay">
         <div className="project-background"></div>
       </div>
-      <Typography variant="h3" sx={{ textAlign: "center", p: 8, fontFamily: "PT Serif, serif" }}>
+      <Typography
+        variant="h3"
+        sx={{
+          fontSize: "calc(2rem + 1vw)",
+          textAlign: "center",
+          p: 5,
+          fontFamily: "PT Serif, serif",
+        }}
+      >
         Projects
       </Typography>
       {projects.map((project, index) => (
-        <Grid container sx={{ maxWidth: "1000px", mx: "auto", p: 5 }} key={index}>
-          <Grid item xs={9} lg={5} sx={{ px: 4, mx: "auto", mb: 2 }}>
-            <Typography variant="h4">{project.title}</Typography>
+        <Grid container sx={{ maxWidth: "1000px", mx: "auto", pb: 4 }} key={index}>
+          <Grid item xs={10} lg={5} sx={{ mx: "auto", mb: 2, pr: 3 }}>
+            <Typography variant="h4" sx={{ fontSize: "calc(1.5rem + .5vw)" }}>
+              {project.title}
+            </Typography>
             <Typography variant="body1" sx={{ py: 3 }}>
               {project.desc}
             </Typography>
             <Box>
               {project.chips.map((chip, index) => (
-                <Chip variant="outlined" label={chip} sx={{ mr: 1, mb: 1 }} key={index} />
+                <Chip
+                  variant="outlined"
+                  label={chip}
+                  size="small"
+                  sx={{ mr: 1, mb: 1 }}
+                  key={index}
+                />
               ))}
             </Box>
           </Grid>
-          <Grid item xs={9} lg={7} sx={{ mx: "auto" }}>
+          <Grid item xs={8} lg={7} sx={{ mx: "auto" }}>
             <Card raised sx={{ mx: "auto" }}>
               <AspectRatio ratio="16/9">
                 <CardMedia
@@ -88,7 +101,7 @@ const Projects = () => {
                 />
               </AspectRatio>
             </Card>
-            <CardActions sx={{ display: "flex", justifyContent: "center", py: 4 }}>
+            <CardActions sx={{ display: "flex", justifyContent: "center", mt: 2 }}>
               <Link href={project.github} target="blank" className="icon-button">
                 <Button
                   variant="contained"

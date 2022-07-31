@@ -1,5 +1,5 @@
-import React, { useRef, useState, useEffect } from "react";
-import { Box, TextField, Grid, Typography, Button, Link } from "@mui/material";
+import React, { useRef, useState } from "react";
+import { Box, TextField, Grid, Typography, Link } from "@mui/material";
 import LoadingButton from "@mui/lab/LoadingButton";
 import PhoneAndroidIcon from "@mui/icons-material/PhoneAndroid";
 import EmailIcon from "@mui/icons-material/Email";
@@ -40,11 +40,17 @@ const Contact = () => {
       <Grid
         container
         columnSpacing={3}
-        rowSpacing={4}
-        sx={{ width: "80%", maxWidth: "1100px", mx: "auto", p: 4 }}
+        rowSpacing={3}
+        sx={{ width: "90%", maxWidth: "1100px", mx: "auto", pb: 4 }}
       >
-        <Grid item md={12} sx={{ textAlign: "center" }}>
-          <Typography variant="h3" sx={{ fontFamily: "PT Serif, serif" }}>
+        <Grid item xs={12} sx={{ textAlign: "center" }}>
+          <Typography
+            variant="h3"
+            sx={{
+              fontSize: "calc(2rem + 1vw)",
+              fontFamily: "PT Serif, serif",
+            }}
+          >
             Contact me
           </Typography>
         </Grid>

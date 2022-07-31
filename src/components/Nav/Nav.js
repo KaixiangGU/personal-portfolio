@@ -1,14 +1,15 @@
 import React from "react";
-import { AppBar, Toolbar, useScrollTrigger, createTheme, ThemeProvider } from "@mui/material";
+import { AppBar, Toolbar, createTheme, ThemeProvider, IconButton } from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+import { useTheme } from "@mui/material/styles";
 import { Link as MuiLink } from "@mui/material";
 import { Link } from "react-scroll";
 import "./Nav.css";
 
 const Nav = () => {
-  const trigger = useScrollTrigger({
-    disableHysteresis: true,
-  });
-  const theme = createTheme({
+  const theme = useTheme();
+
+  const appbarTheme = createTheme({
     palette: {
       nav: {
         main: "rgb(255,200,0)",
@@ -17,10 +18,22 @@ const Nav = () => {
     },
   });
 
+  const toggleMenu = () => {
+    document.querySelector(".nav-container").classList.toggle("show");
+  };
+
   return (
-    <ThemeProvider theme={theme}>
-      <AppBar position="fixed" color={trigger ? "nav" : "transparent"} sx={{ boxShadow: "0" }}>
+    <ThemeProvider theme={appbarTheme}>
+      <AppBar position="fixed" color="nav" sx={{ boxShadow: "0" }}>
+        <IconButton
+          disableRipple
+          sx={{ display: { xs: "block", sm: "none" }, ml: "auto" }}
+          onClick={toggleMenu}
+        >
+          <MenuIcon sx={{ fontSize: 30, color: "white" }} />
+        </IconButton>
         <Toolbar
+          className="nav-container show"
           sx={{
             justifyContent: "center",
             alignItems: "center",
@@ -36,6 +49,7 @@ const Nav = () => {
             offset={0}
             duration={500}
             className="nav-link"
+            onClick={toggleMenu}
           >
             Home
           </Link>
@@ -44,9 +58,10 @@ const Nav = () => {
             to="tech"
             spy={true}
             smooth={true}
-            offset={-64}
+            offset={-53}
             duration={500}
             className="nav-link"
+            onClick={toggleMenu}
           >
             About
           </Link>
@@ -55,9 +70,10 @@ const Nav = () => {
             to="projects"
             spy={true}
             smooth={true}
-            offset={-60}
+            offset={-50}
             duration={500}
             className="nav-link"
+            onClick={toggleMenu}
           >
             Projects
           </Link>
@@ -69,15 +85,17 @@ const Nav = () => {
             offset={-60}
             duration={500}
             className="nav-link"
+            onClick={toggleMenu}
           >
             Contact
           </Link>
           <MuiLink
             href="https://docs.google.com/document/d/1U2tVyJQZXSKzt-BRbxGiRlbEnyEb3LM1wIel6YoKkoI/edit?usp=sharing"
             underline="none"
-            color={trigger ? "white" : "black"}
+            color="white"
             className="nav-link"
             target="blank"
+            onClick={toggleMenu}
           >
             Resume
           </MuiLink>

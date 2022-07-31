@@ -26,7 +26,12 @@ const Tech = () => {
         <Typography
           variant="h3"
           color="white"
-          sx={{ fontFamily: "PT Serif, serif", textAlign: "center", p: 2 }}
+          sx={{
+            fontSize: "calc(2rem + 1vw)",
+            fontFamily: "PT Serif, serif",
+            textAlign: "center",
+            p: 2,
+          }}
         >
           About me
         </Typography>

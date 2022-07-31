@@ -36,7 +36,7 @@ const HeroBanner = () => {
               CODING
             </Typography>
           </div>
-          <Box sx={{ mt: "25vh" }}>
+          <Box sx={{ mt: "25vh", px: 2 }}>
             <Typography
               variant="h1"
               sx={{
