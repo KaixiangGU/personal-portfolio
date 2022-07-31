@@ -1,14 +1,11 @@
 import React from "react";
 import { AppBar, Toolbar, createTheme, ThemeProvider, IconButton } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import { useTheme } from "@mui/material/styles";
 import { Link as MuiLink } from "@mui/material";
 import { Link } from "react-scroll";
 import "./Nav.css";
 
 const Nav = () => {
-  const theme = useTheme();
-
   const appbarTheme = createTheme({
     palette: {
       nav: {
@@ -35,6 +32,7 @@ const Nav = () => {
         <Toolbar
           className="nav-container show"
           sx={{
+            display: "flex",
             justifyContent: "center",
             alignItems: "center",
             columnGap: 5,
@@ -58,7 +56,7 @@ const Nav = () => {
             to="tech"
             spy={true}
             smooth={true}
-            offset={-53}
+            offset={-55}
             duration={500}
             className="nav-link"
             onClick={toggleMenu}

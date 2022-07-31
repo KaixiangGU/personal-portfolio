@@ -10,8 +10,8 @@
 
 @media (max-width: 600px) {
   .nav-container {
-    flex-direction: column;
     display: none;
+    flex-direction: column;
     row-gap: 0.5rem;
     padding: 0.5rem;
   }
