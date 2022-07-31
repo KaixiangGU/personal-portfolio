@@ -31,7 +31,7 @@ const Nav = () => {
           <MenuIcon sx={{ fontSize: 30, color: "white" }} />
         </IconButton>
         <Toolbar
-          className="nav-container show"
+          className="nav-container"
           sx={{
             display: "flex",
             justifyContent: "center",
