@@ -9,11 +9,21 @@ const Nav = () => {
   const appbarTheme = createTheme({
     palette: {
       nav: {
-        main: "rgb(255,200,0)",
+        main: "#4fC3DC",
         contrastText: "#fff",
       },
     },
   });
+
+  //change navbar background color on scrolling
+  const appbar = document.querySelector(".appbar");
+  window.onscroll = () => {
+    if (window.scrollY > 150) {
+      appbar.classList.add("scroll");
+    } else {
+      appbar.classList.remove("scroll");
+    }
+  };
 
   const toggleMenu = () => {
     const nav = document.querySelector(".MuiToolbar-root");
@@ -22,7 +32,7 @@ const Nav = () => {
 
   return (
     <ThemeProvider theme={appbarTheme}>
-      <AppBar position="fixed" color="nav" sx={{ boxShadow: "0" }}>
+      <AppBar position="fixed" color="transparent" className="appbar" sx={{ boxShadow: "0" }}>
         <IconButton
           disableRipple
           sx={{ display: { xs: "block", sm: "none" }, ml: "auto" }}

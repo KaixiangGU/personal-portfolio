@@ -9,9 +9,10 @@ const HeroBanner = () => {
     <>
       <Box id="home">
         <Box className="hero-banner" sx={{ overflow: "hidden" }}>
+          <div class="area"></div>
           <div className="overlay">
             <div className="background"></div>
-            <Typography
+            {/* <Typography
               variant="h1"
               sx={{
                 fontWeight: "bold",
@@ -34,11 +35,24 @@ const HeroBanner = () => {
               className="hero-banner-text-2"
             >
               CODING
-            </Typography>
+            </Typography> */}
+            <ul class="circles">
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
           </div>
-          <Box sx={{ mt: "25vh", px: 2 }}>
+          <Box sx={{ mt: "30vh", px: 2 }}>
             <Typography
               variant="h1"
+              color="white"
               sx={{
                 ml: "8vw",
                 fontFamily: "PT Serif, serif",
@@ -49,12 +63,13 @@ const HeroBanner = () => {
             </Typography>
             <Typography
               variant="h1"
+              color="white"
               fontWeight="bold"
               sx={{
                 fontFamily: "'Jost', sans-serif;",
                 ml: "8vw",
                 fontSize: "calc(3rem + 4vw)",
-                textShadow: "6px 6px 0px rgb(255,200,0)",
+                textShadow: "6px 6px 0px #2ab6d5                ",
               }}
             >
               a web developer
@@ -62,10 +77,10 @@ const HeroBanner = () => {
           </Box>
           <Box sx={{ ml: "8vw" }}>
             <IconButton disableRipple>
-              <GitHubIcon sx={{ fontSize: 40 }} className="github-icon" />
+              <GitHubIcon sx={{ fontSize: 40, color: "white" }} className="github-icon" />
             </IconButton>
             <IconButton disableRipple sx={{ mx: 2 }}>
-              <LinkedInIcon sx={{ fontSize: 43 }} className="linkedin-icon" />
+              <LinkedInIcon sx={{ fontSize: 43, color: "white" }} className="linkedin-icon" />
             </IconButton>
           </Box>
         </Box>

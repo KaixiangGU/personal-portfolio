@@ -25,7 +25,7 @@ const Tech = () => {
       <Box sx={{ width: "80%", maxWidth: "700px" }}>
         <Typography
           variant="h3"
-          color="white"
+          color="black"
           sx={{
             fontSize: "calc(2rem + 1vw)",
             fontFamily: "PT Serif, serif",
@@ -35,7 +35,7 @@ const Tech = () => {
         >
           About me
         </Typography>
-        <Typography variant="body1" color="white" sx={{ fontSize: "1.2rem" }}>
+        <Typography variant="body1" color="black" sx={{ fontSize: "1.2rem" }}>
           {about}
         </Typography>
       </Box>

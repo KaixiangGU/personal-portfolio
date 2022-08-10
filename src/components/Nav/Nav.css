@@ -3,9 +3,18 @@
   cursor: pointer;
 }
 
+.nav-container {
+  color: white;
+}
+
 .nav-link:hover {
   transform: scale(1.1);
   text-shadow: 2px 2px 2px rgb(144, 144, 144);
+}
+
+.appbar.scroll {
+  background-color: #4fc3dc;
+  transition: 0.3s ease-in-out;
 }
 
 @media (max-width: 600px) {
