@@ -16,8 +16,8 @@ const Nav = () => {
   });
 
   //change navbar background color on scrolling
-  const navContainer = document.querySelector(".nav-container");
   window.onscroll = () => {
+    const navContainer = document.querySelector(".nav-container");
     if (window.scrollY > 150) {
       navContainer.classList.add("scroll");
     } else {
