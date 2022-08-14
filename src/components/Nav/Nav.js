@@ -1,5 +1,5 @@
 import React from "react";
-import { AppBar, Toolbar, createTheme, ThemeProvider, IconButton } from "@mui/material";
+import { AppBar, Toolbar, createTheme, ThemeProvider, IconButton, Box } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link as MuiLink } from "@mui/material";
 import { Link } from "react-scroll";
@@ -16,12 +16,12 @@ const Nav = () => {
   });
 
   //change navbar background color on scrolling
-  const appbar = document.querySelector(".appbar");
+  const navContainer = document.querySelector(".nav-container");
   window.onscroll = () => {
     if (window.scrollY > 150) {
-      appbar.classList.add("scroll");
+      navContainer.classList.add("scroll");
     } else {
-      appbar.classList.remove("scroll");
+      navContainer.classList.remove("scroll");
     }
   };
 
@@ -32,14 +32,17 @@ const Nav = () => {
 
   return (
     <ThemeProvider theme={appbarTheme}>
-      <AppBar position="fixed" color="transparent" className="appbar" sx={{ boxShadow: "0" }}>
-        <IconButton
-          disableRipple
-          sx={{ display: { xs: "block", sm: "none" }, ml: "auto" }}
-          onClick={toggleMenu}
-        >
-          <MenuIcon sx={{ fontSize: 30, color: "white" }} />
-        </IconButton>
+      <AppBar position="fixed" color="transparent" sx={{ boxShadow: "0" }}>
+        <Box sx={{ backgroundColor: "#4fc3dc" }}>
+          <IconButton
+            disableRipple
+            className="menu-button"
+            sx={{ display: { xs: "block", sm: "none" }, ml: "auto" }}
+            onClick={toggleMenu}
+          >
+            <MenuIcon sx={{ fontSize: 30, color: "white" }} />
+          </IconButton>
+        </Box>
         <Toolbar
           className="nav-container"
           sx={{

@@ -44,6 +44,14 @@ const Projects = () => {
       site: "https://ecommerce-app-kaixianggu.vercel.app/",
     },
     {
+      title: "Apple Website Clone",
+      desc: "This is a fully responsive clone website of Apple Canada Page and it built with pure HTML and CSS. I used this project to practice my UI skills and try to rebuild exact the same look as original website.",
+      image: "./images/apple-clone.png",
+      chips: ["HTML5", "CSS3", "Javascript"],
+      github: "https://github.com/KaixiangGU/apple-clone",
+      site: "https://kaixianggu.github.io/apple-clone/",
+    },
+    {
       title: "Weather app",
       desc: "It's a beginner project to practice my vanilla javascript and data fetching with external API. This app is hosted by github page",
       image: "./images/weatherapp.png",

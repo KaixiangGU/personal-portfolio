@@ -12,7 +12,7 @@
   text-shadow: 2px 2px 2px rgb(144, 144, 144);
 }
 
-.appbar.scroll {
+.nav-container.scroll {
   background-color: #4fc3dc;
   transition: 0.3s ease-in-out;
 }
@@ -21,6 +21,7 @@
   .nav-container {
     display: none !important;
     flex-direction: column;
+    background-color: #4fc3dc;
     row-gap: 0.5rem;
     padding: 0.5rem;
   }
