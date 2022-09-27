@@ -33,7 +33,7 @@ const Nav = () => {
   return (
     <ThemeProvider theme={appbarTheme}>
       <AppBar position="fixed" color="transparent" sx={{ boxShadow: "0" }}>
-        <Box sx={{ backgroundColor: "#4fc3dc" }}>
+        <Box sx={{ backgroundColor: "#112240" }}>
           <IconButton
             disableRipple
             className="menu-button"
@@ -49,7 +49,6 @@ const Nav = () => {
             display: "flex",
             justifyContent: "center",
             columnGap: 5,
-            fontSize: "1.5rem",
           }}
         >
           <Link
@@ -66,7 +65,7 @@ const Nav = () => {
           </Link>
           <Link
             activeClass="active"
-            to="tech"
+            to="about"
             spy={true}
             smooth={true}
             offset={-55}

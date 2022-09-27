@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Box, Typography, Grid } from "@mui/material";
 import "./Tech.css";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const Tech = () => {
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, []);
+
   const about =
-    "I'm a self-taught web developer currently based in British Columbia, CA. I have strong adaptability and self-study ability and always eager to learn new skills. Currently looking for full time opportunities.";
+    "I'm a Front-end web developer currently based in Vancouver, B.C. I'm a creative and passionate developer who loves creating high-quality, elegant webpages and always have curiosity and eagerness to learn any new skills that may better fit my job. I'm currently looking for full time opportunities. The following are the skills that I've been working with my projects and have hands-on experience.";
 
   return (
     <Box
@@ -13,33 +19,44 @@ const Tech = () => {
         display: "flex",
         alignItems: "center",
         flexDirection: "column",
-        py: 4,
+        py: 25,
         position: "relative",
       }}
-      id="tech"
+      className="tech-wrapper"
+      id="about"
     >
-      <div className="tech-background-overlay">
-        <div className="tech-background"></div>
-        <div className="gradient"></div>
-      </div>
+      <div className="tech-background-overlay"></div>
       <Box sx={{ width: "80%", maxWidth: "700px" }}>
         <Typography
           variant="h3"
-          color="black"
+          color="#ccd6f6"
+          data-aos="fade-up"
+          data-aos-once
           sx={{
             fontSize: "calc(2rem + 1vw)",
-            fontFamily: "PT Serif, serif",
+            fontFamily: "'Jost', serif",
             textAlign: "center",
-            p: 2,
+            pb: 5,
           }}
         >
           About me
         </Typography>
-        <Typography variant="body1" color="black" sx={{ fontSize: "1.2rem" }}>
+        <Typography
+          variant="body1"
+          color="#a8b2d1"
+          data-aos="fade-up"
+          data-aos-once
+          sx={{ fontFamily: "SFmono", letterSpacing: 0.2, fontSize: "1rem" }}
+        >
           {about}
         </Typography>
       </Box>
-      <Grid cotainer sx={{ width: "80%", maxWidth: "1000px", mx: "auto" }}>
+      <Grid
+        cotainer
+        data-aos="fade-up"
+        data-aos-once
+        sx={{ width: "80%", maxWidth: "1000px", mx: "auto", my: 4 }}
+      >
         <Grid
           item
           md={12}

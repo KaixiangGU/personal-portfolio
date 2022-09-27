@@ -41,29 +41,40 @@ const Contact = () => {
         container
         columnSpacing={3}
         rowSpacing={3}
-        sx={{ width: "90%", maxWidth: "1100px", mx: "auto", pb: 4 }}
+        sx={{ width: "90%", maxWidth: "1100px", mx: "auto", pb: 20 }}
       >
         <Grid item xs={12} sx={{ textAlign: "center" }}>
           <Typography
             variant="h3"
+            color="#ccd6f6"
+            data-aos="fade-up"
+            data-aos-once
             sx={{
               fontSize: "calc(2rem + 1vw)",
-              fontFamily: "PT Serif, serif",
+              fontFamily: "'Jost', serif",
+              pb: 5,
             }}
           >
-            Contact me
+            Get In Touch
           </Typography>
         </Grid>
-        <Grid item md={7}>
+        <Grid item md={7} data-aos="fade-up" data-aos-once>
           <form ref={form} onSubmit={handleSubmit}>
-            <TextField label="Your Name" name="from_name" variant="filled" fullWidth required />
+            <TextField
+              label="Your Name"
+              name="from_name"
+              variant="filled"
+              fullWidth
+              required
+              sx={{ backgroundColor: "white" }}
+            />
             <TextField
               label="Your Email"
               name="from_email"
               variant="filled"
               fullWidth
               required
-              sx={{ my: 3 }}
+              sx={{ my: 3, backgroundColor: "white" }}
             />
             <TextField
               label="Enter Your Message"
@@ -73,7 +84,7 @@ const Contact = () => {
               variant="filled"
               fullWidth
               required
-              sx={{ mb: 3 }}
+              sx={{ mb: 3, backgroundColor: "white" }}
             />
             <Box sx={{ display: "flex", justifyContent: "center" }}>
               <LoadingButton
@@ -89,39 +100,59 @@ const Contact = () => {
             </Box>
           </form>
         </Grid>
-        <Grid item md={5}>
+        <Grid
+          item
+          md={5}
+          sx={{ fontFamily: "SFmono, Arial, Helvetica, sans-serif" }}
+          data-aos="fade-up"
+          data-aos-once
+        >
           <Box className="flex">
-            <PhoneAndroidIcon className="contact-icons" />
-            <Typography variant="body1">+1 778-668-6364</Typography>
+            <PhoneAndroidIcon style={{ color: "#ccd6f6" }} className="contact-icons" />
+            <Typography variant="body1" color="#a8b2d1">
+              +1 778-668-6364
+            </Typography>
           </Box>
           <Box className="flex">
-            <EmailIcon className="contact-icons" />
-            <Typography variant="body1">kevingu7140@gmail.com</Typography>
+            <EmailIcon style={{ color: "#ccd6f6" }} className="contact-icons" />
+            <Typography variant="body1" color="#a8b2d1">
+              kevingu7140@gmail.com
+            </Typography>
           </Box>
           <Box className="flex">
-            <GitHubIcon className="contact-icons" />
+            <GitHubIcon style={{ color: "#ccd6f6" }} className="contact-icons" />
             <Link
               href="https://github.com/KaixiangGU"
               target="blank"
               sx={{ textDecoration: "none" }}
             >
-              <Typography variant="body1">https://github.com/KaixiangGU</Typography>
+              <Typography variant="body1" color="#a8b2d1" className="external-link">
+                https://github.com/KaixiangGU
+              </Typography>
             </Link>
           </Box>
           <Box className="flex">
-            <LinkedInIcon className="contact-icons" />
+            <LinkedInIcon style={{ color: "#ccd6f6" }} className="contact-icons" />
             <Link
               href="https://www.linkedin.com/in/kevin-gu-905a19224/"
               target="blank"
               sx={{ textDecoration: "none" }}
             >
-              <Typography variant="body1">
+              <Typography variant="body1" color="#a8b2d1" className="external-link">
                 https://www.linkedin.com/in/kevin-gu-905a19224/
               </Typography>
             </Link>
           </Box>
         </Grid>
       </Grid>
+      <Typography
+        variant="body2"
+        color="#ccd6f6"
+        fontFamily="SFmono, Helvetica"
+        sx={{ pb: 5, textAlign: "center" }}
+      >
+        Designed & Built by Kevin Gu
+      </Typography>
     </Box>
   );
 };

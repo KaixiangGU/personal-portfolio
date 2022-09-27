@@ -5,9 +5,17 @@
 }
 
 .contact-icons {
-  margin-right: 0.5rem;
+  margin-right: 1rem;
 }
 
 .contact-background {
-  background-color: rgb(244, 244, 237);
+  background-color: rgb(10, 25, 47);
+}
+
+.external-link:hover {
+  color: white;
+}
+
+#contact {
+  padding-top: 5rem;
 }
