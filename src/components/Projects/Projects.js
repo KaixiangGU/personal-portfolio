@@ -10,16 +10,24 @@ import "./Project.css";
 const Projects = () => {
   const projects = [
     {
+      title: "Algo Simplified",
+      desc: "I built Algo Simplified because I'm fascinated about sorting algorithms and I want to visualize sorting process to better understand how different sorting methods work behind the scene.",
+      image: "./images/algo-visualizer.jpeg",
+      chips: ["React.js", "HTML", "CSS", "Javascript"],
+      github: "https://github.com/KaixiangGU/Algorithm-Visualizer",
+      site: "https://algosimplified.netlify.app/",
+    },
+    {
       title: "MERN Foodie app",
-      desc: "It's a recipe sharing app built with MERN stack. Users are allowed to login with Email or Google account. This app also supports basic CRUD operations and all the recipes will be stored in MongoDB database.",
+      desc: "It's a recipe sharing app built with MERN stack. This app supports CRUD operations of recipes and also user authentication feature. Users are able to login with either username/password or google login feature. I use MongoDB as database to store and all the data",
       image: "./images/foodie.jpg",
       chips: ["React.js", "express", "Node.js", "MongoDB", "Redux"],
       github: "https://github.com/KaixiangGU/foodie-app",
       site: "https://app-foodie.netlify.app/",
     },
     {
-      title: "Ecommerce shop",
-      desc: "This is a CMS based ecommerce app with shopping cart and Stripe payment functions, and for the backend which is hosted by Sanity CMS.",
+      title: "Techmore",
+      desc: "Techmore is a CMS based ecommerce app with shopping cart and Stripe payment functionalities, and I use Sanity to manage and update product details ",
       image: "./images/ecommerce.jpg",
       chips: ["Next.js", "express", "Sanity(CMS)", "React.js", "Stripe"],
       github: "https://github.com/KaixiangGU/Ecommerce-App",

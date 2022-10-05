@@ -10,7 +10,7 @@ const Tech = () => {
   }, []);
 
   const about =
-    "I'm a Front-end web developer currently based in Vancouver, B.C. I'm a creative and passionate developer who loves creating high-quality, elegant webpages and always have curiosity and eagerness to learn any new skills that may better fit my job. I'm currently looking for full time opportunities. The following are the skills that I've been working with my projects and have hands-on experience.";
+    "I'm a software developer currently based in Vancouver, B.C. I'm a creative and passionate developer who loves creating high-quality, elegant webpages and always have curiosity and eagerness to learn any new skills that may better fit my job. I'm currently looking for full time opportunities. The following are the skills that I've been working with my projects and have hands-on experience.";
 
   return (
     <Box

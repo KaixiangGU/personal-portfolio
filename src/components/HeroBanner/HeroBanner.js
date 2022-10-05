@@ -125,7 +125,7 @@ const HeroBanner = () => {
                 fontSize: "calc(2.5rem + 3vw)",
               }}
             >
-              Frontend Web Developer
+              Software Developer
             </Typography>
           </Box>
           <Box sx={{ ml: "8vw" }} className="header-icon">
