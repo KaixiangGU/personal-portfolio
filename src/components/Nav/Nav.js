@@ -1,11 +1,47 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { AppBar, Toolbar, createTheme, ThemeProvider, IconButton, Box } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link as MuiLink } from "@mui/material";
+import Modal from "@mui/material/Modal";
+import CloseIcon from "@mui/icons-material/Close";
 import { Link } from "react-scroll";
 import "./Nav.css";
+//firebase
+import storage from "../../firebase/config";
+import { getDownloadURL, ref } from "firebase/storage";
+//pdf.js
+import { Worker, Viewer } from "@react-pdf-viewer/core";
+import "@react-pdf-viewer/core/lib/styles/index.css";
+import "@react-pdf-viewer/default-layout/lib/styles/index.css";
+import { defaultLayoutPlugin } from "@react-pdf-viewer/default-layout";
 
 const Nav = () => {
+  const [resume, setResume] = useState("");
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => setOpen(!open);
+  const handleClose = () => setOpen(!open);
+
+  const renderToolbar = (Toolbar) => (
+    <>
+      <Toolbar />
+      <IconButton onClick={handleClose}>
+        <CloseIcon />
+      </IconButton>
+    </>
+  );
+
+  const defaultLayoutPluginInstance = defaultLayoutPlugin({
+    sidebarTabs: (defaultTabs) => [],
+    renderToolbar,
+  });
+
+  useEffect(() => {
+    getDownloadURL(ref(storage, "Kevin Gu - Front End Developer - Resume.pdf")).then((url) => {
+      setResume(url);
+    });
+  }, []);
+
   const appbarTheme = createTheme({
     palette: {
       nav: {
@@ -80,7 +116,7 @@ const Nav = () => {
             to="projects"
             spy={true}
             smooth={true}
-            offset={-50}
+            offset={-60}
             duration={500}
             className="nav-link"
             onClick={toggleMenu}
@@ -100,15 +136,19 @@ const Nav = () => {
             Contact
           </Link>
           <MuiLink
-            href="https://docs.google.com/document/d/1U2tVyJQZXSKzt-BRbxGiRlbEnyEb3LM1wIel6YoKkoI/edit?usp=sharing"
             underline="none"
             color="white"
             className="nav-link"
             target="blank"
-            onClick={toggleMenu}
+            onClick={handleOpen}
           >
             Resume
           </MuiLink>
+          <Modal open={open} onClose={handleClose} sx={{ width: "80%", mx: "auto" }}>
+            <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.0.279/build/pdf.worker.min.js">
+              <Viewer fileUrl={resume} plugins={[defaultLayoutPluginInstance]} />
+            </Worker>
+          </Modal>
         </Toolbar>
       </AppBar>
     </ThemeProvider>

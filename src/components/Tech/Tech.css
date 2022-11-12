@@ -10,3 +10,9 @@
   background-color: rgb(10, 25, 47);
   z-index: -2;
 }
+
+@media (max-width: 500px) {
+  .dev-icons {
+    font-size: 2.5rem;
+  }
+}

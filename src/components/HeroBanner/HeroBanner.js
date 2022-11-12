@@ -1,4 +1,4 @@
-import { Typography, Box, AppBar, Button, IconButton } from "@mui/material";
+import { Typography, Box, IconButton } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import Particles from "react-particles";
@@ -125,7 +125,7 @@ const HeroBanner = () => {
                 fontSize: "calc(2.5rem + 3vw)",
               }}
             >
-              Software Developer
+              Front End Developer
             </Typography>
           </Box>
           <Box sx={{ ml: "8vw" }} className="header-icon">

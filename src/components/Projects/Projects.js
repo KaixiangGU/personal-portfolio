@@ -3,8 +3,6 @@ import { Box, Card, CardMedia, CardActions, Typography, Link, Grid } from "@mui/
 import AspectRatio from "@mui/joy/AspectRatio";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
-import { Aos } from "aos";
-import "aos/dist/aos.css";
 import "./Project.css";
 
 const Projects = () => {
