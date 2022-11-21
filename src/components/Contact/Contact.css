@@ -8,14 +8,11 @@
   margin-right: 1rem;
 }
 
-.contact-background {
-  background-color: rgb(10, 25, 47);
-}
-
 .external-link:hover {
   color: white;
 }
 
 #contact {
   padding-top: 5rem;
+  position: relative;
 }

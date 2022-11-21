@@ -51,114 +51,116 @@ const Projects = () => {
 
   return (
     <Box id="projects">
-      <Typography
-        variant="h3"
-        color="#ccd6f6"
-        data-aos="fade-up"
-        data-aos-once
-        sx={{
-          fontSize: "calc(2rem + 1vw)",
-          textAlign: "center",
-          pb: 10,
-          fontFamily: "'Jost', serif",
-        }}
-      >
-        My Projects
-      </Typography>
-      {projects.map((project, index) => (
-        <Grid
-          container
-          sx={{ maxWidth: "1000px", mx: "auto", pb: 20 }}
-          key={index}
-          className="project-wrapper"
+      <Box className="projects-content">
+        <Typography
+          variant="h3"
+          color="#ccd6f6"
           data-aos="fade-up"
           data-aos-once
+          sx={{
+            fontSize: "calc(2rem + 1vw)",
+            textAlign: "center",
+            pb: 10,
+            fontFamily: "'Jost', serif",
+          }}
         >
-          <Grid item xs={10} md={5} sx={{ mx: "auto", mb: 2 }}>
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-                height: "100%",
-              }}
-            >
-              <Typography
-                variant="h4"
-                color="#ccd6f6"
-                className="project-title"
+          My Projects
+        </Typography>
+        {projects.map((project, index) => (
+          <Grid
+            container
+            sx={{ maxWidth: "1000px", mx: "auto", pb: 20 }}
+            key={index}
+            className="project-wrapper"
+            data-aos="fade-up"
+            data-aos-once
+          >
+            <Grid item xs={10} md={5} sx={{ mx: "auto", mb: 2 }}>
+              <Box
                 sx={{
-                  fontFamily: "'Jost', serif",
-                  fontSize: "calc(1.2rem + .5vw)",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  height: "100%",
                 }}
               >
-                0{index + 1}. {project.title}
-              </Typography>
-              <Box sx={{ backgroundColor: "#112240", p: 2, my: 2 }}>
-                <Typography variant="body1" color="#a8b2d1" sx={{ fontSize: "14px" }}>
-                  {project.desc}
-                </Typography>
-                <Box
-                  sx={{ display: "flex", justifyContent: "flex-start", pt: 2, flexWrap: "wrap" }}
+                <Typography
+                  variant="h4"
+                  color="#ccd6f6"
+                  className="project-title"
+                  sx={{
+                    fontFamily: "'Jost', serif",
+                    fontSize: "calc(1.2rem + .5vw)",
+                  }}
                 >
-                  {project.chips.map((chip, index) => (
-                    <Typography
-                      key={index}
-                      variant="body2"
-                      color="#ccd6f6"
-                      fontFamily="SFmono"
-                      fontSize="14px"
-                      sx={{ mr: 2 }}
-                    >
-                      {chip}
-                    </Typography>
-                  ))}
+                  0{index + 1}. {project.title}
+                </Typography>
+                <Box sx={{ backgroundColor: "#112240", p: 2, my: 2 }}>
+                  <Typography variant="body1" color="#a8b2d1" sx={{ fontSize: "14px" }}>
+                    {project.desc}
+                  </Typography>
+                  <Box
+                    sx={{ display: "flex", justifyContent: "flex-start", pt: 2, flexWrap: "wrap" }}
+                  >
+                    {project.chips.map((chip, index) => (
+                      <Typography
+                        key={index}
+                        variant="body2"
+                        color="#ccd6f6"
+                        fontFamily="SFmono"
+                        fontSize="14px"
+                        sx={{ mr: 2 }}
+                      >
+                        {chip}
+                      </Typography>
+                    ))}
+                  </Box>
                 </Box>
-              </Box>
-              <CardActions sx={{ display: "flex" }}>
-                <Link href={project.github} target="blank" sx={{ mr: 2 }}>
-                  <GitHubIcon
-                    sx={{ color: "#ccd6f6", "&:hover": { color: "#64ffda" } }}
-                    className="project-icon"
-                  />
-                </Link>
-                <Link href={project.site} target="blank">
-                  <OpenInNewIcon
-                    sx={{ color: "#ccd6f6", "&:hover": { color: "#64ffda" } }}
-                    className="project-icon"
-                  />
-                </Link>
-              </CardActions>
-            </Box>
-          </Grid>
-          <Grid item xs={8} md={6} sx={{ mx: "auto" }} className="project-image">
-            {index === 0 ? (
-              <iframe
-                width="540"
-                height="360"
-                src="https://www.youtube.com/embed/_UZEMaKGsww"
-                title="Foodie App Video Demo"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture fullscreen"
-                allowFullScreen
-              />
-            ) : (
-              <Card raised sx={{ mx: "auto" }}>
-                <Link href={project.site} target="blank">
-                  <AspectRatio ratio="16/9">
-                    <CardMedia
-                      height="300"
-                      component="img"
-                      image={require(`${project.image}`)}
-                      alt={project.title}
+                <CardActions sx={{ display: "flex" }}>
+                  <Link href={project.github} target="blank" sx={{ mr: 2 }}>
+                    <GitHubIcon
+                      sx={{ color: "#ccd6f6", "&:hover": { color: "#64ffda" } }}
+                      className="project-icon"
                     />
-                  </AspectRatio>
-                </Link>
-              </Card>
-            )}
+                  </Link>
+                  <Link href={project.site} target="blank">
+                    <OpenInNewIcon
+                      sx={{ color: "#ccd6f6", "&:hover": { color: "#64ffda" } }}
+                      className="project-icon"
+                    />
+                  </Link>
+                </CardActions>
+              </Box>
+            </Grid>
+            <Grid item xs={8} md={6} sx={{ mx: "auto" }} className="project-image">
+              {index === 0 ? (
+                <iframe
+                  width="540"
+                  height="360"
+                  src="https://www.youtube.com/embed/_UZEMaKGsww"
+                  title="Foodie App Video Demo"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture fullscreen"
+                  allowFullScreen
+                />
+              ) : (
+                <Card raised sx={{ mx: "auto" }}>
+                  <Link href={project.site} target="blank">
+                    <AspectRatio ratio="16/9">
+                      <CardMedia
+                        height="300"
+                        component="img"
+                        image={require(`${project.image}`)}
+                        alt={project.title}
+                      />
+                    </AspectRatio>
+                  </Link>
+                </Card>
+              )}
+            </Grid>
           </Grid>
-        </Grid>
-      ))}
+        ))}
+      </Box>
     </Box>
   );
 };

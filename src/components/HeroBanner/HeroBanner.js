@@ -31,7 +31,7 @@ const HeroBanner = () => {
               container
               options={{
                 fullScreen: {
-                  enable: false,
+                  enable: true,
                 },
                 fpsLimit: 120,
                 interactivity: {
@@ -58,26 +58,25 @@ const HeroBanner = () => {
                 },
                 particles: {
                   color: {
-                    value: "#64ffda",
+                    value: "#ccd6f6",
                   },
-                  links: {
-                    color: "#64ffda",
-                    distance: 200,
-                    enable: true,
-                    opacity: 0.3,
-                    width: 1,
-                  },
+                  // links: {
+                  //   color: "#64ffda",
+                  //   distance: 200,
+                  //   enable: true,
+                  //   opacity: 0.3,
+                  //   width: 1,
+                  // },
                   collisions: {
                     enable: true,
                   },
                   move: {
                     directions: "none",
                     enable: true,
-                    outModes: {
-                      default: "bounce",
-                    },
-                    random: false,
-                    speed: 1.5,
+                    outModes: "out",
+                    bounce: false,
+                    random: true,
+                    speed: 1,
                     straight: false,
                   },
                   number: {
@@ -85,19 +84,29 @@ const HeroBanner = () => {
                       enable: true,
                       area: 800,
                     },
-                    value: 150,
+                    value: 80,
                   },
                   opacity: {
                     value: 0.3,
+                    random: true,
+                    anim: {
+                      enable: true,
+                      speed: 1,
+                      opacity_min: 0,
+                      sync: false,
+                    },
                   },
                   shape: {
                     type: "circle",
                   },
                   size: {
-                    value: { min: 1, max: 3 },
+                    value: { min: 1, max: 5 },
                   },
                 },
                 detectRetina: true,
+                background: {
+                  color: "#0a192f",
+                },
               }}
             />
           </div>
