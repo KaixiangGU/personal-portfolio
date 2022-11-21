@@ -7,16 +7,6 @@
   padding-bottom: 20px;
 }
 
-.project-image {
-  transition: transform 0.2s ease-in-out;
-  transform: translateY(0) translateX(0);
-}
-
-.project-image:hover {
-  transition: transform 0.2s ease-in-out;
-  transform: translateY(-0.5rem) translateX(0.5rem);
-}
-
 .project-icon:hover {
   color: #64ffda;
 }

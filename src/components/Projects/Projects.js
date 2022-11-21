@@ -8,20 +8,20 @@ import "./Project.css";
 const Projects = () => {
   const projects = [
     {
-      title: "Algo Simplified",
-      desc: "I built Algo Simplified because I'm fascinated about sorting algorithms and I want to visualize sorting process to better understand how different sorting methods work behind the scene.",
-      image: "./images/algo-visualizer.jpeg",
-      chips: ["React.js", "HTML", "CSS", "Javascript"],
-      github: "https://github.com/KaixiangGU/Algorithm-Visualizer",
-      site: "https://algosimplified.netlify.app/",
-    },
-    {
       title: "MERN Foodie app",
       desc: "It's a recipe sharing app built with MERN stack. This app supports CRUD operations of recipes and also user authentication feature. Users are able to login with either username/password or google login feature. I use MongoDB as database to store and all the data",
       image: "./images/foodie.jpg",
       chips: ["React.js", "express", "Node.js", "MongoDB", "Redux"],
       github: "https://github.com/KaixiangGU/foodie-app",
       site: "https://app-foodie.netlify.app/",
+    },
+    {
+      title: "Algo Simplified",
+      desc: "I built Algo Simplified because I'm fascinated about sorting algorithms and I want to visualize sorting process to better understand how different sorting methods work behind the scene.",
+      image: "./images/algo-visualizer.jpeg",
+      chips: ["React.js", "HTML", "CSS", "Javascript"],
+      github: "https://github.com/KaixiangGU/Algorithm-Visualizer",
+      site: "https://algosimplified.netlify.app/",
     },
     {
       title: "Techmore",
@@ -132,18 +132,30 @@ const Projects = () => {
             </Box>
           </Grid>
           <Grid item xs={8} md={6} sx={{ mx: "auto" }} className="project-image">
-            <Card raised sx={{ mx: "auto" }}>
-              <Link href={project.site} target="blank">
-                <AspectRatio ratio="16/9">
-                  <CardMedia
-                    height="300"
-                    component="img"
-                    image={require(`${project.image}`)}
-                    alt={project.title}
-                  />
-                </AspectRatio>
-              </Link>
-            </Card>
+            {index === 0 ? (
+              <iframe
+                width="540"
+                height="360"
+                src="https://www.youtube.com/embed/_UZEMaKGsww"
+                title="Foodie App Video Demo"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture fullscreen"
+                allowFullScreen
+              />
+            ) : (
+              <Card raised sx={{ mx: "auto" }}>
+                <Link href={project.site} target="blank">
+                  <AspectRatio ratio="16/9">
+                    <CardMedia
+                      height="300"
+                      component="img"
+                      image={require(`${project.image}`)}
+                      alt={project.title}
+                    />
+                  </AspectRatio>
+                </Link>
+              </Card>
+            )}
           </Grid>
         </Grid>
       ))}
